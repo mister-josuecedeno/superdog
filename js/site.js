@@ -166,6 +166,7 @@ function getData() {
   return events;
 }
 
+// Access the values from the form by ID and add an object to the array
 // Save user-provided data
 function saveEvent() {
   // grab the events out of local storage
@@ -175,14 +176,15 @@ function saveEvent() {
   obj['event'] = document.getElementById('newEvent').value;
   obj['city'] = document.getElementById('newCity').value;
   obj['state'] = document.getElementById('newState').value;
-  obj['attendance'] = document.getElementById('newAttendance').value;
+  obj['attendance'] = +document.getElementById('newAttendance').value;
   obj['date'] = formatDate(document.getElementById('newDate').value);
 
   events.push(obj);
 
   localStorage.setItem('eventArray', JSON.stringify(events));
 
-  // Access the values from the form by ID and ad an object to the array
+  document.forms[0].reset();
+  buildDropDown();
   displayData(events);
 }
 
