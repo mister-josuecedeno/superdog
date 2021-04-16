@@ -68,6 +68,8 @@ var eventArray = [
 // Filtered data
 var filteredEvents = eventArray;
 
+// CITY STATISTICS -- Functions for City Drop-down and Statistics
+
 // Build drop-down for filtering statistics by city
 function buildDropDown() {
   var eventDD = document.getElementById('eventDropDown');
@@ -139,6 +141,7 @@ function getEvents(e) {
   displayStats();
 }
 
+// EVENT DATA -- Functions for displaying event data
 // Load events (data)
 loadEvents();
 
@@ -197,7 +200,9 @@ function displayData(events) {
     dataRow.getElementById('event').textContent = events[i].event;
     dataRow.getElementById('city').textContent = events[i].city;
     dataRow.getElementById('state').textContent = events[i].state;
-    dataRow.getElementById('attendance').textContent = events[i].attendance;
+    dataRow.getElementById('attendance').textContent = events[
+      i
+    ].attendance.toLocaleString();
     dataRow.getElementById('date').textContent = formatDate(events[i].date);
 
     resultsBody.appendChild(dataRow);
