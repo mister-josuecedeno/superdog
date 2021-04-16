@@ -1,3 +1,4 @@
+// Base data for seeding application
 var eventArray = [
   {
     event: 'ComicCon',
@@ -64,9 +65,84 @@ var eventArray = [
   },
 ];
 
+// Filtered data
+var filteredEvents = eventArray;
+
+// Build drop-down for filtering statistics by city
+function buildDropDown() {
+  var eventDD = document.getElementById('eventDropDown');
+
+  let distinctEvents = [...new Set(eventArray.map((event) => event.city))];
+  let linkHTMLEnd =
+    '<div class="dropdown-divider"></div><a class="dropdown-item" onclick="getEvents(this)" data-string="All" >All</a>';
+  let resultsHTML = '';
+
+  for (let i = 0; i < distinctEvents.length; i++) {
+    resultsHTML += `<a class="dropdown-item" onclick="getEvents(this)" data-string="${distinctEvents[i]}">${distinctEvents[i]}</a>`;
+  }
+
+  resultsHTML += linkHTMLEnd;
+  eventDD.innerHTML = resultsHTML;
+  displayStats();
+  // displayData();
+}
+
+// Display statistics based on city selection
+function displayStats() {
+  let total = 0;
+  let average = 0;
+  let most = 0;
+  let least = -1;
+  let currentAttendance = 0;
+
+  for (let i = 0; i < filteredEvents.length; i++) {
+    currentAttendance = filteredEvents[i].attendance;
+    total += currentAttendance;
+
+    if (most < currentAttendance) {
+      most = currentAttendance;
+    }
+
+    if (least > currentAttendance || least < 0) {
+      least = currentAttendance;
+    }
+  }
+
+  average = total / filteredEvents.length;
+
+  document.getElementById('total').innerHTML = total.toLocaleString();
+  document.getElementById('most').innerHTML = most.toLocaleString();
+  document.getElementById('least').innerHTML = least.toLocaleString();
+  document.getElementById('average').innerHTML = average.toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }
+  );
+}
+
+// Get the events for the selected city
+function getEvents(e) {
+  let city = e.getAttribute('data-string');
+  curEvents = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
+  filteredEvents = curEvents;
+  document.getElementById('statsHeader').innerHTML = `Stats for ${city} Events`;
+
+  if (city !== 'All') {
+    filteredEvents = curEvents.filter(function (event) {
+      if (event.city == city) {
+        return event;
+      }
+    });
+  }
+  displayStats();
+}
+
+// Load events (data)
 loadEvents();
 
-// This is the parent of all of our operations
+// Trigger for data load
 function loadEvents() {
   let events = [];
   events = getData();
@@ -87,6 +163,7 @@ function getData() {
   return events;
 }
 
+// Save user-provided data
 function saveEvent() {
   // grab the events out of local storage
   let events = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
@@ -106,6 +183,7 @@ function saveEvent() {
   displayData(events);
 }
 
+// Display event data
 function displayData(events) {
   const myTemplate = document.getElementById('Data-Template');
   const resultsBody = document.getElementById('resultsBody');
@@ -126,6 +204,7 @@ function displayData(events) {
   }
 }
 
+// Format date string
 function formatDate(dateString) {
   var cleaned = ('' + dateString).replace(/\D/g, '');
   var match = cleaned.match(/^(\d{1,2})(\d{1,2})(\d{4})$/);
