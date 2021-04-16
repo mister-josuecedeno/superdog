@@ -176,7 +176,7 @@ function saveEvent() {
   obj['city'] = document.getElementById('newCity').value;
   obj['state'] = document.getElementById('newState').value;
   obj['attendance'] = document.getElementById('newAttendance').value;
-  obj['date'] = document.getElementById('newDate').value;
+  obj['date'] = formatDate(document.getElementById('newDate').value);
 
   events.push(obj);
 
@@ -184,6 +184,12 @@ function saveEvent() {
 
   // Access the values from the form by ID and ad an object to the array
   displayData(events);
+}
+
+// Reformat new dates
+function formatDate(dateString) {
+  let [year, month, day] = dateString.split('-');
+  return [month, day, year].join('/');
 }
 
 // Display event data
@@ -203,18 +209,19 @@ function displayData(events) {
     dataRow.getElementById('attendance').textContent = events[
       i
     ].attendance.toLocaleString();
-    dataRow.getElementById('date').textContent = formatDate(events[i].date);
+    // dataRow.getElementById('date').textContent = formatDate(events[i].date);
+    dataRow.getElementById('date').textContent = events[i].date;
 
     resultsBody.appendChild(dataRow);
   }
 }
 
-// Format date string
-function formatDate(dateString) {
+// Format date string (REMOVE)
+/* function formatDate(dateString) {
   var cleaned = ('' + dateString).replace(/\D/g, '');
   var match = cleaned.match(/^(\d{1,2})(\d{1,2})(\d{4})$/);
   if (match) {
     return match[1] + '/' + match[2] + '/' + match[3];
   }
   return null;
-}
+} */
