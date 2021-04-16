@@ -65,7 +65,7 @@ var eventArray = [
   },
 ];
 
-// Filtered data
+// Filtered data (accessible to all functions)
 var filteredEvents = eventArray;
 
 // CITY STATISTICS -- Functions for City Drop-down and Statistics
@@ -73,8 +73,9 @@ var filteredEvents = eventArray;
 // Build drop-down for filtering statistics by city
 function buildDropDown() {
   var eventDD = document.getElementById('eventDropDown');
+  let curEvents = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
 
-  let distinctEvents = [...new Set(eventArray.map((event) => event.city))];
+  let distinctEvents = [...new Set(curEvents.map((event) => event.city))];
   let linkHTMLEnd =
     '<div class="dropdown-divider"></div><a class="dropdown-item" onclick="getEvents(this)" data-string="All" >All</a>';
   let resultsHTML = '';
@@ -127,7 +128,7 @@ function displayStats() {
 // Get the events for the selected city
 function getEvents(e) {
   let city = e.getAttribute('data-string');
-  curEvents = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
+  let curEvents = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
   filteredEvents = curEvents;
   document.getElementById('statsHeader').innerHTML = `Stats for ${city} Events`;
 
@@ -217,13 +218,3 @@ function displayData(events) {
     resultsBody.appendChild(dataRow);
   }
 }
-
-// Format date string (REMOVE)
-/* function formatDate(dateString) {
-  var cleaned = ('' + dateString).replace(/\D/g, '');
-  var match = cleaned.match(/^(\d{1,2})(\d{1,2})(\d{4})$/);
-  if (match) {
-    return match[1] + '/' + match[2] + '/' + match[3];
-  }
-  return null;
-} */
