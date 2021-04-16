@@ -113,7 +113,7 @@ function displayData(events) {
   // clear table first
   resultsBody.innerHTML = '';
 
-  for (let i = 0; i <= events.length; i++) {
+  for (let i = 0; i < events.length; i++) {
     const dataRow = document.importNode(myTemplate.content, true);
 
     dataRow.getElementById('event').textContent = events[i].event;
