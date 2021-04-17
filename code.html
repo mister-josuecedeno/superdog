@@ -1,203 +1,441 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Super Dog Events</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>FizzBuzz</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link href="/img/favicon.ico" rel="icon" />
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="/img/favicon.ico" rel="icon">
-  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Sticky footer CSS -->
+    <link rel="stylesheet" href="./css/site.css" />
 
-  <!-- Sticky footer CSS -->
-  <link rel="stylesheet" href="./css/site.css">
+    <!-- Prism -->
+    <link rel="stylesheet" href="/css/prism-twilight.css" />
 
-  <!-- Prism -->
-  <link rel="stylesheet" href="/css/prism-twilight.css">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+  </head>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" id="logo" href="index.html">Coding Challenge</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="app.html">The App</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="code.html"
+                >See The Code <span class="sr-only">(current)</span></a
+              >
+            </li>
 
-</head>
-
-<body>
-
-  <header>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" id="logo" href="index.html">Coding Challenge</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home </span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="app.html">The App </span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="code.html">See The Code <span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/mister-josuecedeno/fizzbuzz" target="_blank">Get The Code</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About The Developer</a>
-          </li>
-          <!-- <li class="nav-item">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://github.com/mister-josuecedeno/fizzbuzz"
+                target="_blank"
+                >Get The Code</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About The Developer</a>
+            </li>
+            <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li> -->
-        </ul>
-        <!-- <form class="form-inline mt-2 mt-md-0">
+          </ul>
+          <!-- <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form> -->
-      </div>
-    </nav>
-  </header>
+        </div>
+      </nav>
+    </header>
 
-  <!-- Begin page content -->
-  <main role="main">
-    <!-- Add HTML later -->
-    <div class="container mt-5">
-      
-      <!-- Card -->
-      <div class="row">
-        <div class="col">
-          <!-- Try a card -->
-          <div class="card mt-5 shadow">
-            <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
-            <div class="card-body">
-              <h4 class="card-title border-bottom p-1"><i class="fas fa-bolt"></i> Code Review</h4>
-              <p class="card-text">printNumbers: (1) Pull form variables, (2) Generate range of numbers, (3) Run FizzBuzz logic.</p>
-              <p class="card-text">FizzBuzz: Using modulus, determine if divisible by Fizz * Buzz, Fizz, Buzz</p>
-              <p class="card-text">Note: Fizz and Buzz are user defined</p>
+    <!-- Begin page content -->
+    <main role="main">
+      <!-- Add HTML later -->
+      <div class="container mt-5">
+        <!-- Card -->
+        <div class="row">
+          <div class="col">
+            <!-- Try a card -->
+            <div class="card mt-5 shadow">
+              <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+              <div class="card-body">
+                <h4 class="card-title border-bottom p-1">
+                  &lt;/&gt; Code Review
+                </h4>
+                <p>
+                  The application has three major code functions: (1) Event
+                  Statistics (by City); (2) Event Data; (3) Adding Events.
+                </p>
+                <h6 class="card-text ml-1 mb-3">
+                  Click the section links below to learn more about the code.
+                </h6>
+
+                <!-- Collapsible Sections -->
+                <div class="accordion" id="accordionSuperDogCode">
+                  <!-- Event Statistics -->
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button
+                          class="btn btn-link"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#collapseEventStatistics"
+                          aria-expanded="true"
+                          aria-controls="collapseEventStatistics"
+                        >
+                          Event Statistics
+                        </button>
+                      </h2>
+                    </div>
+
+                    <div
+                      id="collapseEventStatistics"
+                      class="collapse show"
+                      aria-labelledby="headingOne"
+                      data-parent="#accordionSuperDogCode"
+                    >
+                      <div class="card-body">
+                        <h5>Build Drop Down</h5>
+                        <p class="mb-3">
+                          The statistics section of the application initially
+                          leverages seed data, which is an array of objects.
+                          This data is stored in local storage at the initial
+                          load.
+                        </p>
+                        <p>
+                          <span class="badge badge-info">Line 4</span> Sets the
+                          curEvents variable to the locally stored array (or the
+                          base event array)
+                        </p>
+                        <p>
+                          <span class="badge badge-info">Line 6</span> Using Set
+                          the data is traversed with map to create a unique list
+                          of cities for the drop-down.
+                        </p>
+
+                        <!-- Start Code -->
+                        <pre
+                          class="line-numbers"
+                        ><code class="language-javascript">// Build drop-down for filtering statistics by city
+function buildDropDown() {
+  var eventDD = document.getElementById('eventDropDown');
+  let curEvents = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
+
+  let distinctEvents = [...new Set(curEvents.map((event) => event.city))];
+  let linkHTMLEnd =
+    '<div class="dropdown-divider"></div><a class="dropdown-item" onclick="getEvents(this)" data-string="All" >All</a>';
+  let resultsHTML = '';
+
+  for (let i = 0; i < distinctEvents.length; i++) {
+    resultsHTML += `<a class="dropdown-item" onclick="getEvents(this)" data-string="${distinctEvents[i]}">${distinctEvents[i]}</a>`;
+  }
+
+  resultsHTML += linkHTMLEnd;
+  eventDD.innerHTML = resultsHTML;
+  displayStats();
+}
+</code></pre>
+                        <!-- End Code -->
+
+                        <h5 class="mt-3">Get Events</h5>
+                        <p class="mb-3">Description here</p>
+                        <p>
+                          <span class="badge badge-info">Line 8</span> Using the
+                          array method "filter" a copy is made of the base data
+                          for the purpose of creating statistics for the
+                          selected city.
+                        </p>
+
+                        <!-- Start Code -->
+                        <pre
+                          class="line-numbers"
+                        ><code class="language-javascript">// Get the events for the selected city
+function getEvents(e) {
+  let city = e.getAttribute('data-string');
+  let curEvents = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
+  filteredEvents = curEvents;
+  document.getElementById('statsHeader').innerHTML = `Stats for ${city} Events`;
+
+  if (city !== 'All') {
+    filteredEvents = curEvents.filter(function (event) {
+      if (event.city == city) {
+        return event;
+      }
+    });
+  }
+  displayStats();
+}
+</code></pre>
+                        <!-- End Code -->
+                        <h5 class="mt-3">Display Stats</h5>
+                        <p class="mb-3">
+                          The filtered data is used to create event statistics
+                          that are then inserted into the HTML.
+                        </p>
+
+                        <!-- Start Code -->
+                        <pre
+                          class="line-numbers"
+                        ><code class="language-javascript">// Display statistics based on city selection
+function displayStats() {
+  let total = 0;
+  let average = 0;
+  let most = 0;
+  let least = -1;
+  let currentAttendance = 0;
+
+  for (let i = 0; i < filteredEvents.length; i++) {
+    currentAttendance = filteredEvents[i].attendance;
+    total += currentAttendance;
+
+    if (most < currentAttendance) {
+      most = currentAttendance;
+    }
+
+    if (least > currentAttendance || least < 0) {
+      least = currentAttendance;
+    }
+  }
+
+  average = total / filteredEvents.length;
+
+  document.getElementById('total').innerHTML = total.toLocaleString();
+  document.getElementById('most').innerHTML = most.toLocaleString();
+  document.getElementById('least').innerHTML = least.toLocaleString();
+  document.getElementById('average').innerHTML = average.toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }
+  );
+}
+</code></pre>
+                        <!-- End Code -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Event Data -->
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button
+                          class="btn btn-link collapsed"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#collapseEventData"
+                          aria-expanded="false"
+                          aria-controls="collapseEventData"
+                        >
+                          Event Data
+                        </button>
+                      </h2>
+                    </div>
+                    <div
+                      id="collapseEventData"
+                      class="collapse"
+                      aria-labelledby="headingTwo"
+                      data-parent="#accordionSuperDogCode"
+                    >
+                      <div class="card-body">
+                        <h5>Get Data</h5>
+                        <p class="mb-3">
+                          Similar to Event Statistics, data is pulled from local
+                          storage (or the base array).
+                        </p>
+
+                        <h5>Display Data</h5>
+                        <p class="mb-3">
+                          Templates are used to pull the data and dynamically
+                          populate the HTML. This technique is particularly
+                          powerful as it keeps the HTML out of the Javascript.
+                        </p>
+                        <p>
+                          <span class="badge badge-info">Lines 3 and 4</span>
+                          Identifies the template and the code destination.
+                        </p>
+                        <p>
+                          <span class="badge badge-info">Line 9</span> In the
+                          for loop a copy of the template is populated with data
+                          then appended to the target destination.
+                        </p>
+
+                        <!-- Start Code -->
+                        <pre
+                          class="line-numbers"
+                        ><code class="language-javascript">// Display event data
+function displayData(events) {
+  const myTemplate = document.getElementById('Data-Template');
+  const resultsBody = document.getElementById('resultsBody');
+
+  // clear table first
+  resultsBody.innerHTML = '';
+
+  for (let i = 0; i < events.length; i++) {
+    const dataRow = document.importNode(myTemplate.content, true);
+
+    dataRow.getElementById('event').textContent = events[i].event;
+    dataRow.getElementById('city').textContent = events[i].city;
+    dataRow.getElementById('state').textContent = events[i].state;
+    dataRow.getElementById('attendance').textContent = events[
+      i
+    ].attendance.toLocaleString();
+    dataRow.getElementById('date').textContent = events[i].date;
+
+    resultsBody.appendChild(dataRow);
+  }
+}
+</code></pre>
+                        <!-- End Code -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Adding New Events -->
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button
+                          class="btn btn-link collapsed"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#collapseAddEvent"
+                          aria-expanded="false"
+                          aria-controls="collapseAddEvent"
+                        >
+                          Adding New Events
+                        </button>
+                      </h2>
+                    </div>
+                    <div
+                      id="collapseAddEvent"
+                      class="collapse"
+                      aria-labelledby="headingTwo"
+                      data-parent="#accordionSuperDogCode"
+                    >
+                      <div class="card-body">
+                        <h5>Save Data</h5>
+                        <p class="mb-3">
+                          Using a modal, the user-provided data is captured,
+                          formatted and appended to the existing array as an
+                          object.
+                        </p>
+                        <p>
+                          <span class="badge badge-info">Lines 4</span>
+                          References the stored data from local storage (or the
+                          base data).
+                        </p>
+                        <p>
+                          <span class="badge badge-info">Line 6 - 15</span>
+                          Populates the object from the modal and pushes to
+                          array, which is then saved to local storage..
+                        </p>
+
+                        <!-- Start Code -->
+                        <pre
+                          class="line-numbers"
+                        ><code class="language-javascript">// Save user-provided data
+function saveEvent() {
+  // grab the events out of local storage
+  let events = JSON.parse(localStorage.getItem('eventArray')) || eventArray;
+
+  let obj = {};
+  obj['event'] = document.getElementById('newEvent').value;
+  obj['city'] = document.getElementById('newCity').value;
+  obj['state'] = document.getElementById('newState').value;
+  obj['attendance'] = +document.getElementById('newAttendance').value;
+  obj['date'] = formatDate(document.getElementById('newDate').value);
+
+  events.push(obj);
+
+  localStorage.setItem('eventArray', JSON.stringify(events));
+
+  document.forms[0].reset();
+  buildDropDown();
+  displayData(events);
+}
+</code></pre>
+                        <!-- End Code -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Collapsible Sections -->
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </main>
 
-      <!-- Code description -->
-      <!-- <div class="row">
-        <div class="col">
-          <h1 class="mt-5"><i class="fas fa-bolt"></i> Code Review</h1>
-          <p>printNumbers: (1) Pull form variables, (2) Generate range of numbers, (3) Run FizzBuzz logic.</p>
-          <p>FizzBuzz: Using modulus, determine if divisible by Fizz * Buzz, Fizz, Buzz</p>
-          <p>Note: Fizz and Buzz are user defined</p>
-          
-        </div>
-      </div> -->
-
-      <!-- Code -->
-      <div class="row">
-        <div class="col">
-          
-          <!-- Print Numbers -->
-          <pre class="line-numbers"><code class="language-javascript">// Take user input and print numbers to the page
-function printNumbers() {
-  let startNum = parseInt(document.getElementById('numOne').value);
-  let endNum = parseInt(document.getElementById('numTwo').value);
-  let numFizz = parseInt(document.getElementById('numFizz').value);
-  let numBuzz = parseInt(document.getElementById('numBuzz').value);
-  let numFizzBuzz = numFizz * numBuzz;
-
-  let numbers = getRange(startNum, endNum);
-
-  displayData(numbers, numFizz, numBuzz, numFizzBuzz);
-}
-</code></pre>
-
-          <!-- Get Range -->
-          <pre class="line-numbers"><code class="language-javascript">// Gets the range of numbers
-function getRange(start, end) {
-  let numberArray = [];
-
-  for (let i = start; i <= end; i++) {
-    numberArray.push(i);
-  }
-
-  return numberArray;
-}</code></pre>
-          
-          <!-- FizzBuzz -->
-          <pre class="line-numbers"><code class="language-javascript">// Displays the numbers on the page
-function displayData(numbers, fizz, buzz, fizzbuzz) {
-  const rowTemplate = document.getElementById('Data-Template');
-  const resultsBody = document.getElementById('resultsBody');
-  let colCount = rowTemplate.content.cloneNode('true').querySelectorAll('td')
-    .length;
-
-  resultsBody.innerHTML = ''; // Clear the table
-
-  // Loop over every element in the numbers array
-  for (let rowIndex = 0; rowIndex < numbers.length; rowIndex += colCount) {
-    // You need to clone it each time
-    let dataRow = rowTemplate.content.cloneNode('true');
-
-    // Return an array of columns
-    let cols = dataRow.querySelectorAll('td');
-
-    for (let colIndex = 0; colIndex < cols.length; colIndex++) {
-      let value = numbers[rowIndex + colIndex];
-
-      // FIZZBUZZ LOGIC
-      // Check if out of bounds
-      if (typeof value === 'undefined') {
-        value = '';
-      } else if (value % fizzbuzz === 0) {
-        value = `FizzBuzz (${value})`;
-        cols[colIndex].classList.add('fizzbuzz');
-      } else if (value % fizz === 0) {
-        value = `Fizz (${value})`;
-        cols[colIndex].classList.add('fizz');
-      } else if (value % buzz === 0) {
-        value = `Buzz (${value})`;
-        cols[colIndex].classList.add('buzz');
-      }
-
-      // TD value is textContent (not like other HTML tags that use value or innerHTML)
-      cols[colIndex].textContent = value;
-    }
-
-    // Inside the row loop (add row to the page)
-    resultsBody.appendChild(dataRow);
-  }
-}</code></pre>
-        </div>
+    <footer class="footer">
+      <div class="container text-center">
+        <span class="text-muted">&copy; Josue Cedeno 2021</span>
       </div>
-    </div>
-  </main>
+    </footer>
 
-  <footer class="footer">
-    <div class="container text-center">
-      <span class="text-muted">&copy; Josue Cedeno 2021</span>
-    </div>
-  </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
-
-  <!-- Prism -->
-  <script src="/js/prism-twilight.js"></script>
-</body>
-
+    <!-- Prism -->
+    <script src="/js/prism-twilight.js"></script>
+  </body>
 </html>

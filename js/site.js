@@ -87,7 +87,6 @@ function buildDropDown() {
   resultsHTML += linkHTMLEnd;
   eventDD.innerHTML = resultsHTML;
   displayStats();
-  // displayData();
 }
 
 // Display statistics based on city selection
@@ -212,7 +211,6 @@ function displayData(events) {
     dataRow.getElementById('attendance').textContent = events[
       i
     ].attendance.toLocaleString();
-    // dataRow.getElementById('date').textContent = formatDate(events[i].date);
     dataRow.getElementById('date').textContent = events[i].date;
 
     resultsBody.appendChild(dataRow);
