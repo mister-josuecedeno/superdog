@@ -61,11 +61,11 @@ h4,
   color: #d21335;
 }
 
-/* p,
+p,
 label {
-  font-weight: 500;
+  /* font-weight: 500; */
   font-size: 1.125rem;
-} */
+}
 
 .fab {
   font-size: 1.125rem;
